@@ -1,15 +1,74 @@
 <!DOCTYPE html>
-<html>
+<html lang="ru">
 <head>
-<title>METANIT.COM</title>
-<meta charset="utf-8">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Чат-бот</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-color: #f4f4f4;
+        }
+        #chat-container {
+            width: 300px;
+            padding: 20px;
+            background: white;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            text-align: center;
+        }
+        input {
+            width: 100%;
+            padding: 10px;
+            margin-top: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            margin-top: 10px;
+            padding: 10px;
+            background: #28a745;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        #response {
+            margin-top: 10px;
+            font-weight: bold;
+        }
+    </style>
 </head>
 <body>
-<h2>Введи свои данные:</h2>
-<form action="display.php" method="POST">
-<p>Введите имя: <input type="text" name="firstname" /></p>
-<p>Введите фамилию: <input type="text" name="lastname" /></p>
-<input type="submit" value="Отправить">
-</form>
+    <div id="chat-container">
+        <h2>Чат-бот</h2>
+        <input type="text" id="question" placeholder="Введите вопрос...">
+        <button onclick="getAnswer()">Спросить</button>
+        <p id="response"></p>
+    </div>
+
+    <script>
+        function getAnswer() {
+            let question = document.getElementById("question").value.trim().toLowerCase();
+            let response = "Я не знаю ответа на этот вопрос.";
+
+            const answers = {
+                "какой сегодня день?": "26 февраля",
+                "кто лучший друг?": "Шахбан и Ганжур",
+                "кто лучшая девушка?": "Кира"
+            };
+
+            if (answers[question]) {
+                response = answers[question];
+            }
+
+            document.getElementById("response").textContent = response;
+        }
+    </script>
 </body>
 </html>
