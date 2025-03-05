@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Чат-бот</title>
+    <title>Интеллект Ганжура</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -12,41 +12,43 @@
             align-items: center;
             justify-content: center;
             height: 100vh;
-            background-color: #f4f4f4;
+            background-color: #e3e3e3;
         }
         #chat-container {
-            width: 300px;
-            padding: 20px;
+            width: 350px;
+            padding: 25px;
             background: white;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            border-radius: 15px;
             text-align: center;
         }
         input {
             width: 100%;
-            padding: 10px;
-            margin-top: 10px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
+            padding: 12px;
+            margin-top: 12px;
+            border: 2px solid #007bff;
+            border-radius: 8px;
         }
         button {
-            margin-top: 10px;
-            padding: 10px;
-            background: #28a745;
+            margin-top: 12px;
+            padding: 12px;
+            background: #007bff;
             color: white;
             border: none;
-            border-radius: 5px;
+            border-radius: 8px;
             cursor: pointer;
+            font-size: 16px;
         }
         #response {
-            margin-top: 10px;
+            margin-top: 15px;
             font-weight: bold;
+            color: #333;
         }
     </style>
 </head>
 <body>
     <div id="chat-container">
-        <h2>Чат-бот</h2>
+        <h2>Интеллект Ганжура</h2>
         <input type="text" id="question" placeholder="Введите вопрос...">
         <button onclick="getAnswer()">Спросить</button>
         <p id="response"></p>
@@ -58,9 +60,9 @@
             let response = "Я не знаю ответа на этот вопрос.";
 
             const answers = {
-                "какой сегодня день?": "26 февраля",
-                "кто лучший друг?": "Шахбан и Ганжур",
-                "кто лучшая девушка?": "Кира"
+                "какой сейчас год?": "2025",
+                "кто самый крутой?": "Тот кто читает!",
+                "где лучше отдыхать?": "Дагестан жиес."
             };
 
             if (answers[question]) {
