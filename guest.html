@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Личный кабинет</title>
+    <link rel="stylesheet" href="style.css">
+    <script>
+        function toggleForm(type) {
+            document.getElementById('login-form').style.display = 
+                type === 'login' ? 'block' : 'none';
+            document.getElementById('register-form').style.display = 
+                type === 'register' ? 'block' : 'none';
+        }
+    </script>
+</head>
+<body>
+    <!-- Шапка и меню -->
+    
+    <main>
+        <div class="guest-form">
+            <button onclick="toggleForm('login')">Вход</button>
+            <button onclick="toggleForm('register')">Регистрация</button>
+            
+            <form id="login-form" style="display:block;">
+                <h2>Вход</h2>
+                <input type="email" placeholder="Email" required>
+                <input type="password" placeholder="Пароль" required>
+                <button type="submit">Войти</button>
+            </form>
+            
+            <form id="register-form" style="display:none;">
+                <h2>Регистрация</h2>
+                <input type="text" placeholder="Имя" required>
+                <input type="email" placeholder="Email" required>
+                <input type="password" placeholder="Пароль" required>
+                <button type="submit">Зарегистрироваться</button>
+            </form>
+        </div>
+    </main>
+    
+    <!-- Подвал -->
+</body>
+</html>
