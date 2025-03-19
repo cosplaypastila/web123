@@ -9,7 +9,7 @@ header {
     background: #0033a0;
     color: white;
     padding: 20px;
-    border-bottom: 3px solid #ffd700;
+    border-bottom: 10px solid #FF8000;
 }
 
 nav {
@@ -70,4 +70,11 @@ hr {
     height: 1px;
     background: #ccc;
     margin: 30px 0;
+}
+
+.divider {
+    border: 0;                
+    height: 0;                
+    border-bottom: 10px solid #FF8000;
+    margin: 0px 0;          
 }
